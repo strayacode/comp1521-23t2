@@ -1,0 +1,25 @@
+.data
+a:  .word   42
+b:  .space  4
+c:  .asciiz "abcde"
+    .align  2
+d:  .byte   1, 2, 3, 4
+e:  .word   1, 2, 3, 4
+f:  .space  1
+
+address, value at that memory/address
+
+memory starts at 0x10000020
+
+a:
+address of 0x10000020, 4 bytes (0, 0, 0, 42)
+b:
+address of 0x10000020 + 4 = 0x10000024, ???
+c:
+address of 0x10000024 + 4 = 0x10000028, values in memory ('a', 'b', 'c', 'd', 'e', '\0')
+d:
+address of 0x10000028 + 8 = 0x10000030, values in memory (1, 2, 3, 4) total of 4 bytes allocated
+e:
+address of 0x10000030 + 4 = 0x10000034, values in memory (1, 2, 3, 4) total of 16 bytes allocated
+f:
+address of 0x10000034 + 16 = 0x10000044, values in memory ???
